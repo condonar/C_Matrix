@@ -8,18 +8,24 @@ int s21_calc_complements(matrix_t *A, matrix_t *result) {
     status = CALCULATION_ERROR;
   } else {
     status = s21_create_matrix(A->rows, A->columns, result);
-    int n = A->rows - 1;
-    matrix_t submatrix;
     double minor = 0;
-    s21_create_matrix(n, n, &submatrix);
-    for (int i = 0; i < A->rows; i++) {
-      for (int j = 0; j < A->columns; j++) {
-        ExtractSubmatrix(i, j, A, &submatrix);
-        Determinant(&submatrix, &minor);
-        result->matrix[i][j] = minor * ((i + j) % 2 == 0 ? 1 : -1);
+
+    matrix_t submatrix;
+    int n = A->rows - 1;
+
+    for (int i = 0; i < A->rows && status == OPERATION_OK; i++) {
+      for (int j = 0; j < A->columns && status == OPERATION_OK; j++) {
+        int status_submatrix = s21_create_matrix(n, n, &submatrix);
+        if (status_submatrix == OPERATION_OK) {
+          ExtractSubmatrix(i, j, A, &submatrix);
+          s21_determinant(&submatrix, &minor);
+          result->matrix[i][j] = minor * ((i + j) % 2 == 0 ? 1 : -1);
+        } else {
+          status = CALCULATION_ERROR;
+        }
+        s21_remove_matrix(&submatrix);
       }
     }
-    s21_remove_matrix(&submatrix);
   }
 
   return status;
