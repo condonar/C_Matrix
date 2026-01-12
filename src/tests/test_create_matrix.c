@@ -45,7 +45,7 @@ Suite *suite_create_matrix(void) {
   tcase_add_test(tcase_create_matrix, test_create_zero_rows);
   tcase_add_test(tcase_create_matrix, test_create_zero_columns);
 
-  Suite *suite_create_matrix = suite_create("\033[94mS21_CREATE_MATRIX\033[0m");
+  Suite *suite_create_matrix = suite_create("S21_CREATE_MATRIX");
   suite_add_tcase(suite_create_matrix, tcase_create_matrix);
 
   return suite_create_matrix;

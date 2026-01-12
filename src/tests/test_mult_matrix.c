@@ -113,7 +113,7 @@ Suite *suite_mult_matrix(void) {
   tcase_add_test(tcase_mult_matrix, test_mult_different_rows_cols);
   tcase_add_test(tcase_mult_matrix, test_mult_different_matrix);
 
-  Suite *suite_mult_matrix = suite_create("\033[94mS21_MULT_MATRIX\033[0m");
+  Suite *suite_mult_matrix = suite_create("S21_MULT_MATRIX");
   suite_add_tcase(suite_mult_matrix, tcase_mult_matrix);
 
   return suite_mult_matrix;

@@ -125,7 +125,7 @@ Suite *suite_determinant(void) {
   tcase_add_test(tcase_determinant, test_determinant_two_two_matrix);
   tcase_add_test(tcase_determinant, test_determinant_five_five_matrix);
 
-  Suite *suite_determinant = suite_create("\033[94mS21_DETERMINANT\033[0m");
+  Suite *suite_determinant = suite_create("S21_DETERMINANT");
   suite_add_tcase(suite_determinant, tcase_determinant);
 
   return suite_determinant;

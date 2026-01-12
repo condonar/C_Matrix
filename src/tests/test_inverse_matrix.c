@@ -63,8 +63,7 @@ Suite *suite_inverse_matrix(void) {
   tcase_add_test(tcase_inverse_matrix, test_inverse_matrix_basic);
   tcase_add_test(tcase_inverse_matrix, test_inverse_zero_determinant);
 
-  Suite *suite_inverse_matrix =
-      suite_create("\033[94mS21_INVERSE_MATRIX\033[0m");
+  Suite *suite_inverse_matrix = suite_create("S21_INVERSE_MATRIX");
   suite_add_tcase(suite_inverse_matrix, tcase_inverse_matrix);
 
   return suite_inverse_matrix;

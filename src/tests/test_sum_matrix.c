@@ -93,7 +93,7 @@ Suite *suite_sum_matrix(void) {
   tcase_add_test(tcase_sum_matrix, test_sum_matrix_different_rows);
   tcase_add_test(tcase_sum_matrix, test_sum_matrix_different_cols);
 
-  Suite *suite_sum_matrix = suite_create("\033[94mS21_SUM_MATRIX\033[0m");
+  Suite *suite_sum_matrix = suite_create("S21_SUM_MATRIX");
   suite_add_tcase(suite_sum_matrix, tcase_sum_matrix);
 
   return suite_sum_matrix;

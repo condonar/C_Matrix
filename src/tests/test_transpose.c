@@ -37,7 +37,7 @@ Suite *suite_transpose(void) {
   TCase *tcase_transpose = tcase_create("TCase transpose");
   tcase_add_test(tcase_transpose, test_transpose_basic);
 
-  Suite *suite_transpose = suite_create("\033[94mS21_TRANSPOSE\033[0m");
+  Suite *suite_transpose = suite_create("S21_TRANSPOSE");
   suite_add_tcase(suite_transpose, tcase_transpose);
 
   return suite_transpose;

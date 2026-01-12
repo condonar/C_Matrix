@@ -20,10 +20,11 @@ int s21_calc_complements(matrix_t *A, matrix_t *result) {
           ExtractSubmatrix(i, j, A, &submatrix);
           s21_determinant(&submatrix, &minor);
           result->matrix[i][j] = minor * ((i + j) % 2 == 0 ? 1 : -1);
+          s21_remove_matrix(&submatrix);
         } else {
           status = CALCULATION_ERROR;
+          s21_remove_matrix(result);
         }
-        s21_remove_matrix(&submatrix);
       }
     }
   }

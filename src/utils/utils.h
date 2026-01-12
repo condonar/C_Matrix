@@ -1,5 +1,5 @@
 #ifndef UTILS_MATRIX_H
-#define UTILS_MATRIX_Y
+#define UTILS_MATRIX_H
 
 #include "../s21_matrix.h"
 

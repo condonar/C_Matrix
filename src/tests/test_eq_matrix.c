@@ -81,7 +81,7 @@ Suite *suite_eq_matrix(void) {
   tcase_add_test(tcase_eq_matrix, test_eq_matrix_not_equal);
   tcase_add_test(tcase_eq_matrix, test_eq_matrix_different_rows_cols);
 
-  Suite *suite_eq_matrix = suite_create("\033[94mS21_EQ_MATRIX\033[0m");
+  Suite *suite_eq_matrix = suite_create("S21_EQ_MATRIX");
   suite_add_tcase(suite_eq_matrix, tcase_eq_matrix);
 
   return suite_eq_matrix;

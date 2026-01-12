@@ -38,7 +38,7 @@ Suite *suite_mult_number(void) {
   TCase *tcase_mult_number = tcase_create("TCase mult number");
   tcase_add_test(tcase_mult_number, test_mult_number_basic);
 
-  Suite *suite_mult_number = suite_create("\033[94mS21_MULT_NUMBER\033[0m");
+  Suite *suite_mult_number = suite_create("S21_MULT_NUMBER");
   suite_add_tcase(suite_mult_number, tcase_mult_number);
 
   return suite_mult_number;

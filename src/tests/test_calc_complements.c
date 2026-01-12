@@ -55,13 +55,34 @@ START_TEST(test_calc_different_rows_cols) {
 }
 END_TEST
 
+START_TEST(test_calc_zero_rows_cols) {
+  matrix_t A;
+  matrix_t result;
+
+  int rows = 1;
+  int cols = 1;
+
+  s21_create_matrix(rows, cols, &A);
+
+  const double data[] = {1.0};
+
+  FillMatrix(rows, cols, data, &A);
+
+  int status = s21_calc_complements(&A, &result);
+  int expected_status = CALCULATION_ERROR;
+
+  ck_assert_int_eq(status, expected_status);
+  s21_remove_matrix(&A);
+}
+END_TEST
+
 Suite *suite_calc_complements(void) {
   TCase *tcase_calc_complements = tcase_create("TCase calc complements");
   tcase_add_test(tcase_calc_complements, test_calc_complements_basic);
   tcase_add_test(tcase_calc_complements, test_calc_different_rows_cols);
+  tcase_add_test(tcase_calc_complements, test_calc_zero_rows_cols);
 
-  Suite *suite_calc_complements =
-      suite_create("\033[94mS21_CALC_COMPLEMENTS\033[0m");
+  Suite *suite_calc_complements = suite_create("S21_CALC_COMPLEMENTS");
   suite_add_tcase(suite_calc_complements, tcase_calc_complements);
 
   return suite_calc_complements;
