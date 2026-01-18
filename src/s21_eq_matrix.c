@@ -1,6 +1,5 @@
 #include "s21_matrix.h"
-
-static double Module(double number);
+#include "utils/utils.h"
 
 int s21_eq_matrix(matrix_t *A, matrix_t *B) {
   int status = SUCCESS;
@@ -17,5 +16,3 @@ int s21_eq_matrix(matrix_t *A, matrix_t *B) {
 
   return status;
 }
-
-static double Module(double number) { return number > 0 ? number : -number; }

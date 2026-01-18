@@ -1,5 +1,8 @@
 #include "utils.h"
 
+
+double Module(double number) { return number > 0 ? number : -number; }
+
 void ExtractSubmatrix(int row, int col, matrix_t *A, matrix_t *submatrix) {
   int r = 0;
   int c = 0;
